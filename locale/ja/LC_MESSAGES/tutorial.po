@@ -1,0 +1,90 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hrpsys tutorials 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-20 15:47+0900\n"
+"PO-Revision-Date: 2015-03-20 16:19+0900\n"
+"Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../../tutorial.rst:3
+msgid "Choreonoid Editor Tutorial"
+msgstr "Choreonoidモデル編集機能チュートリアル"
+
+#: ../../tutorial.rst:6
+msgid "Combining two robot to one"
+msgstr "2つのロボットを接続する"
+
+#: ../../tutorial.rst:8
+msgid ""
+"In this example, we combine arm (PA10) robot and wheel robot to create "
+"mobile arm robot."
+msgstr ""
+"この例では、アーム型のロボット(PA10)と車輪型のロボットを接続して、移動型の"
+"アームロボットを作成します。"
+
+#: ../../tutorial.rst:10
+msgid "First, we load the arm robot."
+msgstr "まず、アーム型のロボットを読み込みます。"
+
+#: ../../tutorial.rst:12 ../../tutorial.rst:22
+msgid ""
+"Select \"File\" -> \"Open ...\" -> \"OpenHRP Model File for Editing\" menu "
+"item."
+msgstr ""
+"メニューから「File > Open ... > OpenHRP Model File for Editing」を選択してく"
+"ださい。"
+
+#: ../../tutorial.rst:14
+msgid ""
+"Dialog box will be appeared and choose \"pa10.main.wrl\" file from the "
+"OpenHRP sample models folder."
+msgstr ""
+"ダイアログが開くのでOpenHRPのサンプルフォルダから「pa10.main.wrl」ファイルを"
+"選択してください。"
+
+#: ../../tutorial.rst:16
+msgid ""
+"Arm robot model is now loaded. Please turn on all the checkbox at side of "
+"the items to let the robot appear in the scene panel."
+msgstr ""
+"アームロボットがロードできました。各アイテムの横のチェックボックスをオンにす"
+"ることで、ロボットの外観がシーンパネル上で確認できます。"
+
+#: ../../tutorial.rst:20
+msgid "We also load the wheel robot."
+msgstr "車輪型のロボットも読み込みます。"
+
+#: ../../tutorial.rst:24
+msgid ""
+"Dialog box will be appeared and choose \"simple_vehicle.wrl\" file from the "
+"OpenHRP sample models folder."
+msgstr ""
+"ダイアログが開くのでOpenHRPのサンプルフォルダから「simple_vehicle.wrl」ファイ"
+"ルを選択してください。"
+
+#: ../../tutorial.rst:28
+msgid ""
+"To connect the arm robot to wheel base, click the \"J1\" item of PA10 robot "
+"model and drag the item over the \"BODY\" item of simple_vehicle model."
+msgstr ""
+"アーム型ロボットを台車に接続するために、PA１０モデルの「J1」アイテムをクリッ"
+"クしてドラッグし、simple_vehicleモデルの「BODY」アイテムの上でドロップしてく"
+"ださい。"
+
+#: ../../tutorial.rst:32
+msgid "Now, we delete the body of arm robot model by right clicking the item."
+msgstr "アーム型ロボットに関するアイテムを右クリックすることで消去します。"
+
+#: ../../tutorial.rst:36
+msgid ""
+"Select the root model item and select \"File\" -> \"Save Selected Items As\" "
+"menu item to save the model in VRML format."
+msgstr ""
+"モデルアイテムをクリックしてメニューから「File > Save Selected Item As」を選"
+"択してVRML形式でモデルをセーブしましょう。"
