@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: hrpsys tutorials 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 15:47+0900\n"
-"PO-Revision-Date: 2015-03-20 16:19+0900\n"
+"PO-Revision-Date: 2015-03-24 13:25+0900\n"
 "Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "First, we load the arm robot."
 msgstr "まず、アーム型のロボットを読み込みます。"
 
-#: ../../tutorial.rst:12 ../../tutorial.rst:22
+#: ../../tutorial.rst:12 ../../tutorial.rst:26
 msgid ""
 "Select \"File\" -> \"Open ...\" -> \"OpenHRP Model File for Editing\" menu "
 "item."
@@ -40,7 +40,7 @@ msgstr ""
 "メニューから「File > Open ... > OpenHRP Model File for Editing」を選択してく"
 "ださい。"
 
-#: ../../tutorial.rst:14
+#: ../../tutorial.rst:18
 msgid ""
 "Dialog box will be appeared and choose \"pa10.main.wrl\" file from the "
 "OpenHRP sample models folder."
@@ -48,7 +48,7 @@ msgstr ""
 "ダイアログが開くのでOpenHRPのサンプルフォルダから「pa10.main.wrl」ファイルを"
 "選択してください。"
 
-#: ../../tutorial.rst:16
+#: ../../tutorial.rst:20
 msgid ""
 "Arm robot model is now loaded. Please turn on all the checkbox at side of "
 "the items to let the robot appear in the scene panel."
@@ -56,11 +56,11 @@ msgstr ""
 "アームロボットがロードできました。各アイテムの横のチェックボックスをオンにす"
 "ることで、ロボットの外観がシーンパネル上で確認できます。"
 
-#: ../../tutorial.rst:20
+#: ../../tutorial.rst:24
 msgid "We also load the wheel robot."
 msgstr "車輪型のロボットも読み込みます。"
 
-#: ../../tutorial.rst:24
+#: ../../tutorial.rst:28
 msgid ""
 "Dialog box will be appeared and choose \"simple_vehicle.wrl\" file from the "
 "OpenHRP sample models folder."
@@ -68,7 +68,7 @@ msgstr ""
 "ダイアログが開くのでOpenHRPのサンプルフォルダから「simple_vehicle.wrl」ファイ"
 "ルを選択してください。"
 
-#: ../../tutorial.rst:28
+#: ../../tutorial.rst:32
 msgid ""
 "To connect the arm robot to wheel base, click the \"J1\" item of PA10 robot "
 "model and drag the item over the \"BODY\" item of simple_vehicle model."
@@ -77,14 +77,22 @@ msgstr ""
 "クしてドラッグし、simple_vehicleモデルの「BODY」アイテムの上でドロップしてく"
 "ださい。"
 
-#: ../../tutorial.rst:32
+#: ../../tutorial.rst:36
 msgid "Now, we delete the body of arm robot model by right clicking the item."
 msgstr "アーム型ロボットに関するアイテムを右クリックすることで消去します。"
 
-#: ../../tutorial.rst:36
+#: ../../tutorial.rst:40
 msgid ""
 "Select the root model item and select \"File\" -> \"Save Selected Items As\" "
 "menu item to save the model in VRML format."
 msgstr ""
 "モデルアイテムをクリックしてメニューから「File > Save Selected Item As」を選"
 "択してVRML形式でモデルをセーブしましょう。"
+
+#: ../../tutorial.rst:16
+msgid ""
+"Here, please **do not** select \"OpenHRP Model File\" menu item, but select "
+"\"OpenHRP Model File **for Editing**\"."
+msgstr ""
+"ここではメニューから「OpenHRPモデルファイル」ではなく「OpenHRP Model File "
+"**for Editing**」を選択するように注意してください。"

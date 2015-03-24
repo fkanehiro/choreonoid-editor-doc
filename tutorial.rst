@@ -11,6 +11,10 @@ First, we load the arm robot.
 
 Select "File" -> "Open ..." -> "OpenHRP Model File for Editing" menu item.
 
+.. warning::
+
+   Here, please **do not** select "OpenHRP Model File" menu item, but select "OpenHRP Model File **for Editing**".
+
 Dialog box will be appeared and choose "pa10.main.wrl" file from the OpenHRP sample models folder.
 
 Arm robot model is now loaded. Please turn on all the checkbox at side of the items to let the robot appear in the scene panel.
