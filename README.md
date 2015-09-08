@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fkanehiro/choreonoid-editor-doc.svg?branch=master)](https://travis-ci.org/fkanehiro/choreonoid-editor-doc)
+
 Documentation project for choreonoid editor
 
 To generate the document:
