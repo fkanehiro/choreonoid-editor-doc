@@ -6,6 +6,7 @@ env:
   global:
     - secure: "7eKy4uX8FghBPYH7E0uysnJcV3BJpfv3YlL9rAJje62MqHdHpEHNpHrUelIoghmZXKY3CrjHMPfl6dBVr2WN5D4v3SR2r4KST+vc+dg6pvk5WuBq/20GQjNEEfQ+mBHVEwztIRgXloRdieMYJIKuo166UGhLbbLmrA/p+3+Ih6cHrP8ZJYztKrwkAuIjp9WovRuPl9S4vdD5/UM7OgJt/VnNC5M/l3hbqvLagDUQAlh+J0lE6ynE8+vvrX8lUHsRUhJgbZ+dn9XRHRub9bhqmwusOtpoGXp48hlOzpCLYgrwbSMeQCWq627bZkvaP9dooaDtgJCUlpdRm0+kXQhZ9xW2X9sNFq6GSsGopv8XMqy08BMKKBzk/Uk+nu91si5wYDeFVB3baxhhfTnIqcwruGamC1Mr5ObNeH7YLewrekxD7H3OSz24z8C+aHNkeamwM0uS9LnLY1FW2NZY5l2FYgOItfeYM5LA65VU4UUjqnCd9C7rl5mA9dcd4ywJ6x8C9i6bANusSlp10g6W1TwxZsxfKWy0XxcfsC+o9Hv5KgD3aPtRdVUiYtAXxKSlacHynIfTd+8//v7gkf92sZ5iR09jvtqmOgM+ppdgR77laYTS5nLyHo/Yolk3sL32cdg6buNxuSiDqzW4x+lQlrjmWx7eRMlm1eynzj+6JqZzmYQ="
 script: source .travis.sh
+sudo: required
 after_success:
   - set +x
   - export GIT_COMMITTER_NAME=$GIT_NAME
