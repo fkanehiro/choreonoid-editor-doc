@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Choreonoidモデル編集機能 &mdash; choreonoid editor 0.0.1 ドキュメント</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="choreonoid editor 0.0.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Choreonoidモデル編集機能チュートリアル" href="tutorial.html"/>
+        <link rel="prev" title="インストール" href="install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> choreonoid editor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">インストール</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-from-source">ソースコードからのインストール</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoidモデル編集機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">アーキテクチャ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editablebodyitem">EditableBodyItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jointitem">JointItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joint-type">Joint type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joint-axis">Joint axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upper-limit">Upper limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lower-limit">Lower limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linkitem">LinkItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#primitive-type">Primitive type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mass">Mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#center-of-mass">Center of mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inertia">Inertia</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Choreonoidモデル編集機能チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#combining-two-robot-to-one">2つのロボットを接続する</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">choreonoid editor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Choreonoidモデル編集機能</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/manual.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="choreonoid-model-editor">
+<h1>Choreonoidモデル編集機能<a class="headerlink" href="#choreonoid-model-editor" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="architecture">
+<h2>アーキテクチャ<a class="headerlink" href="#architecture" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Choreonoidモデル編集機能はChoreonoidの基本機能を拡張するプラグインとして実装されています。</p>
+<p>Choreonoidでは、開発者が左のパネルのツリービュー上に出てくるアイテムを新規に作成し、機能を拡張することができます。</p>
+<p>元のChoreonoidはシミュレーションモデルをロードする「BodyItem」しかありません。Choreonoidモデル編集機能では、シミュレーションモデルを関節とリンクの各パーツに分割し、各々のプロパティを変更することができる「EditableBodyItem」を追加します。</p>
+<p>以下、それら新しい各アイテムについて説明します。</p>
+</div>
+<div class="section" id="editablebodyitem">
+<h2>EditableBodyItem<a class="headerlink" href="#editablebodyitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このアイテムは、他のアイテムの上位に作成されます。</p>
+<p>既存のモデルをロードした場合、このアイテムは自動で作成されます。</p>
+<p>モデルを新規に一から作成する場合にも、まずこのアイテムを作成し、他の全てのアイテムを子アイテムとして接続する必要があります。</p>
+</div>
+<div class="section" id="jointitem">
+<h2>JointItem<a class="headerlink" href="#jointitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>シミュレーションモデルに関節を付与したい場合、このアイテムを作成する必要があります。</p>
+<p>プロパティパネルの各項目をダブルクリックすることで、関節の各プロパティを編集することができます。</p>
+<div class="section" id="joint-type">
+<h3>Joint type<a class="headerlink" href="#joint-type" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関節の種類を「free」「rotate」「slide」「fixed」から選択します。</p>
+</div>
+<div class="section" id="joint-axis">
+<h3>Joint axis<a class="headerlink" href="#joint-axis" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関節角の方向を「x, y, z」の形式で指定します。</p>
+</div>
+<div class="section" id="upper-limit">
+<h3>Upper limit<a class="headerlink" href="#upper-limit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関節角の上限を設定します。</p>
+</div>
+<div class="section" id="lower-limit">
+<h3>Lower limit<a class="headerlink" href="#lower-limit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関節角の下限を設定します。</p>
+</div>
+</div>
+<div class="section" id="linkitem">
+<h2>LinkItem<a class="headerlink" href="#linkitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>シミュレーションモデルに関節を付与したい場合、このアイテムを作成する必要があります。</p>
+<p>プロパティパネルの各項目をダブルクリックすることで、関節の各プロパティを編集することができます。</p>
+<div class="section" id="primitive-type">
+<h3>Primitive type<a class="headerlink" href="#primitive-type" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンクの種類を「Mesh」「Cylinder」「Cone」「Sphere」から選択します。</p>
+<p>プリミティブ型が選択されると、色や直径などの各プリミティブ型用のプロパティが表示されます。</p>
+</div>
+<div class="section" id="mass">
+<h3>Mass<a class="headerlink" href="#mass" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンクの重量を設定します。</p>
+</div>
+<div class="section" id="center-of-mass">
+<h3>Center of mass<a class="headerlink" href="#center-of-mass" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンクの重心を「x, y, z」形式で設定します。</p>
+</div>
+<div class="section" id="inertia">
+<h3>Inertia<a class="headerlink" href="#inertia" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンクの慣性モーメントを3x3の行列形式で設定します。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Choreonoidモデル編集機能チュートリアル" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="インストール" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, AIST.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

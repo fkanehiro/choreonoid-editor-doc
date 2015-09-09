@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Choreonoid Model Editor &mdash; choreonoid editor 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="choreonoid editor 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Choreonoid Editor Tutorial" href="tutorial.html"/>
+        <link rel="prev" title="Install" href="install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> choreonoid editor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-from-source">Install from source</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoid Model Editor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editablebodyitem">EditableBodyItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jointitem">JointItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joint-type">Joint type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joint-axis">Joint axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upper-limit">Upper limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lower-limit">Lower limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linkitem">LinkItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#primitive-type">Primitive type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mass">Mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#center-of-mass">Center of mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inertia">Inertia</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Choreonoid Editor Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#combining-two-robot-to-one">Combining two robot to one</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">choreonoid editor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Choreonoid Model Editor</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/manual.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="choreonoid-model-editor">
+<h1>Choreonoid Model Editor<a class="headerlink" href="#choreonoid-model-editor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<p>Choreonoid model editor is realized as a plugin to extend the basic function of Choreonoid.</p>
+<p>In Choreonoid, plugin developer can extend its function by defining new Items which appears in tree view of left panel.</p>
+<p>Original Choreonoid only have &#8220;BodyItem&#8221; to load the simulation model. Choreonoid model editor adds &#8220;EditableBodyItem&#8221; which you can split the simulation model into joints and links, and change its properties.</p>
+<p>From here, we explain each of those new Items.</p>
+</div>
+<div class="section" id="editablebodyitem">
+<h2>EditableBodyItem<a class="headerlink" href="#editablebodyitem" title="Permalink to this headline">¶</a></h2>
+<p>This item is created on top of all the items.</p>
+<p>When you load your existing model, this item is created automatically.</p>
+<p>Even when you create simulation model from scratch, you have to create this item and connect the other items as a child.</p>
+</div>
+<div class="section" id="jointitem">
+<h2>JointItem<a class="headerlink" href="#jointitem" title="Permalink to this headline">¶</a></h2>
+<p>When you want to add a joint to your simulation model, you have to create this item.</p>
+<p>After created, you can edit the property of the joint by double clicking the property panel.</p>
+<div class="section" id="joint-type">
+<h3>Joint type<a class="headerlink" href="#joint-type" title="Permalink to this headline">¶</a></h3>
+<p>Specifies type of joint from &#8220;free&#8221;, &#8220;rotate&#8221;, &#8220;slide&#8221;, &#8220;fixed&#8221;.</p>
+</div>
+<div class="section" id="joint-axis">
+<h3>Joint axis<a class="headerlink" href="#joint-axis" title="Permalink to this headline">¶</a></h3>
+<p>Specifies direction of joint in [x, y, z] format.</p>
+</div>
+<div class="section" id="upper-limit">
+<h3>Upper limit<a class="headerlink" href="#upper-limit" title="Permalink to this headline">¶</a></h3>
+<p>Specifies upper limit of joint angle.</p>
+</div>
+<div class="section" id="lower-limit">
+<h3>Lower limit<a class="headerlink" href="#lower-limit" title="Permalink to this headline">¶</a></h3>
+<p>Specifies lower limit of joint angle.</p>
+</div>
+</div>
+<div class="section" id="linkitem">
+<h2>LinkItem<a class="headerlink" href="#linkitem" title="Permalink to this headline">¶</a></h2>
+<p>When you want to add a joint to your simulation model, you have to create this item.</p>
+<p>After created, you can edit the property of the joint by double clicking the property panel.</p>
+<div class="section" id="primitive-type">
+<h3>Primitive type<a class="headerlink" href="#primitive-type" title="Permalink to this headline">¶</a></h3>
+<p>Specifies type of link from &#8220;Mesh&#8221;, &#8220;Cylinder&#8221;, &#8220;Cone&#8221;, &#8220;Sphere&#8221;.</p>
+<p>Once primitive type is selected, property for each primitive types (e.g. color and radius for sphere) will be appeared.</p>
+</div>
+<div class="section" id="mass">
+<h3>Mass<a class="headerlink" href="#mass" title="Permalink to this headline">¶</a></h3>
+<p>Specifies mass.</p>
+</div>
+<div class="section" id="center-of-mass">
+<h3>Center of mass<a class="headerlink" href="#center-of-mass" title="Permalink to this headline">¶</a></h3>
+<p>Specifies location of mass center in [x, y, z] format.</p>
+</div>
+<div class="section" id="inertia">
+<h3>Inertia<a class="headerlink" href="#inertia" title="Permalink to this headline">¶</a></h3>
+<p>Specifies moment of inertia in 3x3 matrix format.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Choreonoid Editor Tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="Install" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, AIST.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Choreonoidモデル編集機能チュートリアル &mdash; choreonoid editor 0.0.1 ドキュメント</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="choreonoid editor 0.0.1 ドキュメント" href="index.html"/>
+        <link rel="prev" title="Choreonoidモデル編集機能" href="manual.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> choreonoid editor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">インストール</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-from-source">ソースコードからのインストール</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoidモデル編集機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#architecture">アーキテクチャ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#editablebodyitem">EditableBodyItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#jointitem">JointItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#joint-type">Joint type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#joint-axis">Joint axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#upper-limit">Upper limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#lower-limit">Lower limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#linkitem">LinkItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#primitive-type">Primitive type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#mass">Mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#center-of-mass">Center of mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#inertia">Inertia</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoidモデル編集機能チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#combining-two-robot-to-one">2つのロボットを接続する</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">choreonoid editor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Choreonoidモデル編集機能チュートリアル</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorial.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="choreonoid-editor-tutorial">
+<h1>Choreonoidモデル編集機能チュートリアル<a class="headerlink" href="#choreonoid-editor-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="combining-two-robot-to-one">
+<h2>2つのロボットを接続する<a class="headerlink" href="#combining-two-robot-to-one" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この例では、アーム型のロボット(PA10)と車輪型のロボットを接続して、移動型のアームロボットを作成します。</p>
+<p>まず、アーム型のロボットを読み込みます。</p>
+<p>メニューから「File &gt; Open ... &gt; OpenHRP Model File for Editing」を選択してください。</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">ここではメニューから「OpenHRPモデルファイル」ではなく「OpenHRP Model File <strong>for Editing</strong>」を選択するように注意してください。</p>
+</div>
+<p>ダイアログが開くのでOpenHRPのサンプルフォルダから「pa10.main.wrl」ファイルを選択してください。</p>
+<p>アームロボットがロードできました。各アイテムの横のチェックボックスをオンにすることで、ロボットの外観がシーンパネル上で確認できます。</p>
+<img alt="_images/pa10-loaded.png" src="_images/pa10-loaded.png" />
+<p>車輪型のロボットも読み込みます。</p>
+<p>メニューから「File &gt; Open ... &gt; OpenHRP Model File for Editing」を選択してください。</p>
+<p>ダイアログが開くのでOpenHRPのサンプルフォルダから「simple_vehicle.wrl」ファイルを選択してください。</p>
+<img alt="_images/wheel-loaded.png" src="_images/wheel-loaded.png" />
+<p>アーム型ロボットを台車に接続するために、PA１０モデルの「J1」アイテムをクリックしてドラッグし、simple_vehicleモデルの「BODY」アイテムの上でドロップしてください。</p>
+<img alt="_images/drag-J1.png" src="_images/drag-J1.png" />
+<p>アーム型ロボットに関するアイテムを右クリックすることで消去します。</p>
+<img alt="_images/delete-body.png" src="_images/delete-body.png" />
+<p>モデルアイテムをクリックしてメニューから「File &gt; Save Selected Item As」を選択してVRML形式でモデルをセーブしましょう。</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="manual.html" class="btn btn-neutral" title="Choreonoidモデル編集機能" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, AIST.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

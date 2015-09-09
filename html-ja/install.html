@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>インストール &mdash; choreonoid editor 0.0.1 ドキュメント</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="choreonoid editor 0.0.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Choreonoidモデル編集機能" href="manual.html"/>
+        <link rel="prev" title="Welcome to choreonoid editor documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> choreonoid editor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">インストール</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-from-source">ソースコードからのインストール</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoidモデル編集機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#architecture">アーキテクチャ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#editablebodyitem">EditableBodyItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#jointitem">JointItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#joint-type">Joint type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#joint-axis">Joint axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#upper-limit">Upper limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#lower-limit">Lower limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#linkitem">LinkItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#primitive-type">Primitive type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#mass">Mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#center-of-mass">Center of mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manual.html#inertia">Inertia</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Choreonoidモデル編集機能チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#combining-two-robot-to-one">2つのロボットを接続する</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">choreonoid editor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>インストール</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/install.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="install">
+<h1>インストール<a class="headerlink" href="#install" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="install-from-source">
+<h2>ソースコードからのインストール<a class="headerlink" href="#install-from-source" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>githubから最新のソースコードをクローンします。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/fkanehiro/choreonoid-editor.git
+</pre></div>
+</div>
+<p>まず、依存するライブラリをインストールします。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>choreonoid-editor
+<span class="nv">$ </span>./misc/script/install-requisites-ubuntu-14.04.sh
+</pre></div>
+</div>
+<p>次にcmakeかccmakeを実行します。</p>
+<p>cmakeを使う場合、コマンドラインで以下のオプションを指定してください。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cmake -DBUILD_MODELEDIT_PLUGIN<span class="o">=</span>ON .
+</pre></div>
+</div>
+<p>ccmakeを使う場合、 &#8220;BUILD_MODELEDIT_PLUGIN&#8221; 項目を &#8220;ON&#8221; に設定してください。</p>
+<img alt="_images/ccmake-option.png" src="_images/ccmake-option.png" />
+<p>以下のコマンドでコンパイルして実行してください。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>make
+<span class="nv">$ </span>./bin/choreonoid
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manual.html" class="btn btn-neutral float-right" title="Choreonoidモデル編集機能" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to choreonoid editor documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, AIST.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
