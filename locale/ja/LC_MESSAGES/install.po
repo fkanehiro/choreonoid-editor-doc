@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: hrpsys tutorials 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 15:47+0900\n"
-"PO-Revision-Date: 2015-03-20 15:51+0900\n"
+"PO-Revision-Date: 2015-09-10 10:03+0900\n"
 "Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,34 +16,93 @@ msgstr ""
 msgid "Install"
 msgstr "インストール"
 
-#: ../../install.rst:6
-msgid "Install from source"
-msgstr "ソースコードからのインストール"
-
-#: ../../install.rst:8
+#: ../../install.rst:38
 msgid "Clone most recent source from github."
 msgstr "githubから最新のソースコードをクローンします。"
 
-#: ../../install.rst:14
-msgid "First, install depending libraries."
-msgstr "まず、依存するライブラリをインストールします。"
+#: ../../install.rst:5
+msgid ""
+"To install Choreonoid editor plugin, you first have to install Choreonoid."
+msgstr ""
+"Choreonoid Editorプラグインをインストールするには、まずChoreonoid本体をインス"
+"トールする必要があります。"
 
-#: ../../install.rst:21
-msgid "Then, run cmake or ccmake."
-msgstr "次にcmakeかccmakeを実行します。"
+#: ../../install.rst:8
+msgid "Install Choreonoid from ppa (recommended)"
+msgstr "Choreonoidをppaからインストールする（推奨）"
+
+#: ../../install.rst:10
+msgid "We recommend installing Choreonoid from ppa."
+msgstr "Choreonoidはppaからインストールすることをおすすめします。"
+
+#: ../../install.rst:19
+msgid "Install Choreonoid from source"
+msgstr "Choreonoidをソースからインストールする"
 
 #: ../../install.rst:23
-msgid "If you use cmake, please specify following option on the command line."
-msgstr "cmakeを使う場合、コマンドラインで以下のオプションを指定してください。"
+msgid ""
+"Source based installation is hard way. ppa based installation is highly "
+"recommended."
+msgstr ""
+"ソースコードからのインストールは上級者向けの方法です。ppaからのインストールを"
+"強く推奨します。"
+
+#: ../../install.rst:26
+msgid ""
+"If you want to install Choreonoid from source, please follow following "
+"instructions:"
+msgstr ""
+"Choreonoidをソースからインストールしたい場合、以下の手順に従ってください:"
+
+#: ../../install.rst:36
+msgid "Install Choreonoid Editor Plugin"
+msgstr "Choreonoid Editorプラグインのインストール"
+
+#: ../../install.rst:44
+msgid "Then, run cmake."
+msgstr "次にcmakeを実行します。"
+
+#: ../../install.rst:51
+msgid "Then, run following commands to compile, install and run."
+msgstr ""
+"コンパイル、インストール、実行するために以下のコマンドを実行してください。"
 
 #: ../../install.rst:29
-msgid ""
-"If you use ccmake, please turn setting of \"BUILD_MODELEDIT_PLUGIN\" item to "
-"\"ON\"."
-msgstr ""
-"ccmakeを使う場合、 \"BUILD_MODELEDIT_PLUGIN\" 項目を \"ON\" に設定してくださ"
-"い。"
+msgid "Instructions in Japanese:"
+msgstr "日本語での説明:"
+
+#: ../../install.rst:29
+msgid "http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html"
+msgstr "http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html"
 
 #: ../../install.rst:33
-msgid "Then, run following commands to compile and run."
-msgstr "以下のコマンドでコンパイルして実行してください。"
+msgid "Instructions in English:"
+msgstr "英語での説明:"
+
+#: ../../install.rst:32
+msgid "https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL"
+msgstr "https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL"
+
+#~ msgid "Install from source"
+#~ msgstr "ソースコードからのインストール"
+
+#~ msgid "First, install depending libraries."
+#~ msgstr "まず、依存するライブラリをインストールします。"
+
+#~ msgid "Then, run cmake or ccmake."
+#~ msgstr "次にcmakeかccmakeを実行します。"
+
+#~ msgid ""
+#~ "If you use cmake, please specify following option on the command line."
+#~ msgstr ""
+#~ "cmakeを使う場合、コマンドラインで以下のオプションを指定してください。"
+
+#~ msgid ""
+#~ "If you use ccmake, please turn setting of \"BUILD_MODELEDIT_PLUGIN\" item "
+#~ "to \"ON\"."
+#~ msgstr ""
+#~ "ccmakeを使う場合、 \"BUILD_MODELEDIT_PLUGIN\" 項目を \"ON\" に設定してくだ"
+#~ "さい。"
+
+#~ msgid "Then, run following commands to compile and run."
+#~ msgstr "以下のコマンドでコンパイルして実行してください。"
