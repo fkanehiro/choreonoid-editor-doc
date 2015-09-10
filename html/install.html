@@ -73,7 +73,9 @@
           
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Install</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-from-source">Install from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-from-ppa-recommended">Install Choreonoid from ppa (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-from-source">Install Choreonoid from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-plugin">Install Choreonoid Editor Plugin</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoid Model Editor</a><ul>
@@ -138,27 +140,46 @@
             
   <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="install-from-source">
-<h2>Install from source<a class="headerlink" href="#install-from-source" title="Permalink to this headline">¶</a></h2>
+<p>To install Choreonoid editor plugin, you first have to install Choreonoid.</p>
+<div class="section" id="install-choreonoid-from-ppa-recommended">
+<h2>Install Choreonoid from ppa (recommended)<a class="headerlink" href="#install-choreonoid-from-ppa-recommended" title="Permalink to this headline">¶</a></h2>
+<p>We recommend installing Choreonoid from ppa.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:hrg/daily
+<span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install choreonoid libcnoid-dev
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-choreonoid-from-source">
+<h2>Install Choreonoid from source<a class="headerlink" href="#install-choreonoid-from-source" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Source based installation is hard way.
+ppa based installation is highly recommended.</p>
+</div>
+<p>If you want to install Choreonoid from source, please follow following instructions:</p>
+<dl class="docutils">
+<dt>Instructions in Japanese:</dt>
+<dd><a class="reference external" href="http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html">http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html</a></dd>
+<dt>Instructions in English:</dt>
+<dd><a class="reference external" href="https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL">https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL</a></dd>
+</dl>
+</div>
+<div class="section" id="install-choreonoid-editor-plugin">
+<h2>Install Choreonoid Editor Plugin<a class="headerlink" href="#install-choreonoid-editor-plugin" title="Permalink to this headline">¶</a></h2>
 <p>Clone most recent source from github.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/fkanehiro/choreonoid-editor.git
 </pre></div>
 </div>
-<p>First, install depending libraries.</p>
+<p>Then, run cmake.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>choreonoid-editor
-<span class="nv">$ </span>./misc/script/install-requisites-ubuntu-14.04.sh
+<span class="nv">$ </span>cmake .
 </pre></div>
 </div>
-<p>Then, run cmake or ccmake.</p>
-<p>If you use cmake, please specify following option on the command line.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cmake -DBUILD_MODELEDIT_PLUGIN<span class="o">=</span>ON .
-</pre></div>
-</div>
-<p>If you use ccmake, please turn setting of &#8220;BUILD_MODELEDIT_PLUGIN&#8221; item to &#8220;ON&#8221;.</p>
-<img alt="_images/ccmake-option.png" src="_images/ccmake-option.png" />
-<p>Then, run following commands to compile and run.</p>
+<p>Then, run following commands to compile, install and run.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>make
-<span class="nv">$ </span>./bin/choreonoid
+<span class="nv">$ </span>sudo make install
+<span class="nv">$ </span>choreonoid
 </pre></div>
 </div>
 </div>
