@@ -1,4 +1,4 @@
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hrpsys tutorials 0.0.1\n"
@@ -22,19 +22,15 @@ msgstr "アーキテクチャ"
 
 #: ../../manual.rst:8
 msgid ""
-"Choreonoid model editor is realized as a plugin to extend the basic function "
-"of Choreonoid."
-msgstr ""
-"Choreonoidモデル編集機能はChoreonoidの基本機能を拡張するプラグインとして実装"
-"されています。"
+"Choreonoid model editor is realized as a plugin to extend the basic function"
+" of Choreonoid."
+msgstr "Choreonoidモデル編集機能はChoreonoidの基本機能を拡張するプラグインとして実装されています。"
 
 #: ../../manual.rst:10
 msgid ""
 "In Choreonoid, plugin developer can extend its function by defining new "
 "Items which appears in tree view of left panel."
-msgstr ""
-"Choreonoidでは、開発者が左のパネルのツリービュー上に出てくるアイテムを新規に"
-"作成し、機能を拡張することができます。"
+msgstr "Choreonoidでは、開発者が左のパネルのツリービュー上に出てくるアイテムを新規に作成し、機能を拡張することができます。"
 
 #: ../../manual.rst:12
 msgid ""
@@ -42,10 +38,7 @@ msgid ""
 "Choreonoid model editor adds \"EditableBodyItem\" which you can split the "
 "simulation model into joints and links, and change its properties."
 msgstr ""
-"元のChoreonoidはシミュレーションモデルをロードする「BodyItem」しかありませ"
-"ん。Choreonoidモデル編集機能では、シミュレーションモデルを関節とリンクの各"
-"パーツに分割し、各々のプロパティを変更することができる「EditableBodyItem」を"
-"追加します。"
+"元のChoreonoidはシミュレーションモデルをロードする「BodyItem」しかありません。Choreonoidモデル編集機能では、シミュレーションモデルを関節とリンクの各パーツに分割し、各々のプロパティを変更することができる「EditableBodyItem」を追加します。"
 
 #: ../../manual.rst:14
 msgid "From here, we explain each of those new Items."
@@ -67,9 +60,7 @@ msgstr "既存のモデルをロードした場合、このアイテムは自動
 msgid ""
 "Even when you create simulation model from scratch, you have to create this "
 "item and connect the other items as a child."
-msgstr ""
-"モデルを新規に一から作成する場合にも、まずこのアイテムを作成し、他の全てのア"
-"イテムを子アイテムとして接続する必要があります。"
+msgstr "モデルを新規に一から作成する場合にも、まずこのアイテムを作成し、他の全てのアイテムを子アイテムとして接続する必要があります。"
 
 #: ../../manual.rst:28
 msgid "JointItem"
@@ -79,25 +70,20 @@ msgstr "JointItem"
 msgid ""
 "When you want to add a joint to your simulation model, you have to create "
 "this item."
-msgstr ""
-"シミュレーションモデルに関節を付与したい場合、このアイテムを作成する必要があ"
-"ります。"
+msgstr "シミュレーションモデルに関節を付与したい場合、このアイテムを作成する必要があります。"
 
 #: ../../manual.rst:32 ../../manual.rst:59
 msgid ""
-"After created, you can edit the property of the joint by double clicking the "
-"property panel."
-msgstr ""
-"プロパティパネルの各項目をダブルクリックすることで、関節の各プロパティを編集"
-"することができます。"
+"After created, you can edit the property of the joint by double clicking the"
+" property panel."
+msgstr "プロパティパネルの各項目をダブルクリックすることで、関節の各プロパティを編集することができます。"
 
 #: ../../manual.rst:35
 msgid "Joint type"
 msgstr "Joint type"
 
 #: ../../manual.rst:37
-msgid ""
-"Specifies type of joint from \"free\", \"rotate\", \"slide\", \"fixed\"."
+msgid "Specifies type of joint from \"free\", \"rotate\", \"slide\", \"fixed\"."
 msgstr "関節の種類を「free」「rotate」「slide」「fixed」から選択します。"
 
 #: ../../manual.rst:40
@@ -132,18 +118,11 @@ msgstr "LinkItem"
 msgid "Primitive type"
 msgstr "Primitive type"
 
-#: ../../manual.rst:64
-msgid ""
-"Specifies type of link from \"Mesh\", \"Cylinder\", \"Cone\", \"Sphere\"."
-msgstr "リンクの種類を「Mesh」「Cylinder」「Cone」「Sphere」から選択します。"
-
 #: ../../manual.rst:66
 msgid ""
 "Once primitive type is selected, property for each primitive types (e.g. "
 "color and radius for sphere) will be appeared."
-msgstr ""
-"プリミティブ型が選択されると、色や直径などの各プリミティブ型用のプロパティが"
-"表示されます。"
+msgstr "プリミティブ型が選択されると、色や直径などの各プリミティブ型用のプロパティが表示されます。"
 
 #: ../../manual.rst:69
 msgid "Mass"
@@ -168,3 +147,7 @@ msgstr "Inertia"
 #: ../../manual.rst:81
 msgid "Specifies moment of inertia in 3x3 matrix format."
 msgstr "リンクの慣性モーメントを3x3の行列形式で設定します。"
+
+#: ../../manual.rst:64
+msgid "Specifies type of link from \"Box\", \"Cylinder\", \"Cone\", \"Sphere\"."
+msgstr "リンクの種類を「Box」「Cylinder」「Cone」「Sphere」から選択します。"
