@@ -61,7 +61,7 @@ After created, you can edit the property of the joint by double clicking the pro
 Primitive type
 --------------
 
-Specifies type of link from "Mesh", "Cylinder", "Cone", "Sphere".
+Specifies type of link from "Box", "Cylinder", "Cone", "Sphere".
 
 Once primitive type is selected, property for each primitive types (e.g. color and radius for sphere) will be appeared.
 
