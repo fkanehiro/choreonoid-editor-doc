@@ -2,8 +2,38 @@
  Install
 =========
 
-Install from source
-===================
+To install Choreonoid editor plugin, you first have to install Choreonoid.
+
+Install Choreonoid from ppa (recommended)
+=========================================
+
+We recommend installing Choreonoid from ppa.
+
+.. code-block:: bash
+
+   $ sudo add-apt-repository ppa:hrg/daily
+   $ sudo apt-get update
+   $ sudo apt-get install choreonoid libcnoid-dev
+
+Install Choreonoid from source
+==============================
+
+.. warning::
+
+   Source based installation is hard way.
+   ppa based installation is highly recommended.
+
+If you want to install Choreonoid from source, please follow following instructions:
+
+Instructions in Japanese:
+ http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html
+
+Instructions in English:
+ https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL
+
+
+Install Choreonoid Editor Plugin
+================================
 
 Clone most recent source from github.
 
@@ -11,28 +41,17 @@ Clone most recent source from github.
 
    $ git clone https://github.com/fkanehiro/choreonoid-editor.git
 
-First, install depending libraries.
+Then, run cmake.
 
 .. code-block:: bash
 
    $ cd choreonoid-editor
-   $ ./misc/script/install-requisites-ubuntu-14.04.sh
+   $ cmake .
 
-Then, run cmake or ccmake.
-
-If you use cmake, please specify following option on the command line.
-
-.. code-block:: bash
-
-   $ cmake -DBUILD_MODELEDIT_PLUGIN=ON .
-
-If you use ccmake, please turn setting of "BUILD_MODELEDIT_PLUGIN" item to "ON".
-
-.. image:: ccmake-option.png
-
-Then, run following commands to compile and run.
+Then, run following commands to compile, install and run.
 
 .. code-block:: bash
 
    $ make
-   $ ./bin/choreonoid
+   $ sudo make install
+   $ choreonoid
