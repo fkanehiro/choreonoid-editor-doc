@@ -4,8 +4,22 @@
 
 To install Choreonoid editor plugin, you first have to install Choreonoid.
 
-Install Choreonoid from ppa (recommended)
-=========================================
+Install Choreonoid editor from ppa (recommended)
+================================================
+
+We recommend installing Choreonoid from ppa.
+
+.. code-block:: bash
+
+   $ sudo add-apt-repository ppa:hrg/daily
+   $ sudo apt-get update
+   $ sudo apt-get install choreonoid-editor
+
+Install Choreonoid editor from source
+=====================================
+
+Install Choreonoid from ppa
+---------------------------
 
 We recommend installing Choreonoid from ppa.
 
@@ -16,7 +30,7 @@ We recommend installing Choreonoid from ppa.
    $ sudo apt-get install choreonoid libcnoid-dev
 
 Install Choreonoid from source
-==============================
+------------------------------
 
 .. warning::
 
@@ -33,7 +47,7 @@ Instructions in English:
 
 
 Install Choreonoid Editor Plugin
-================================
+--------------------------------
 
 Clone most recent source from github.
 

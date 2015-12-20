@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: hrpsys tutorials 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 15:47+0900\n"
-"PO-Revision-Date: 2015-03-24 13:25+0900\n"
+"PO-Revision-Date: 2015-12-20 11:51+0900\n"
 "Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -81,6 +81,14 @@ msgstr ""
 msgid "Now, we delete the body of arm robot model by right clicking the item."
 msgstr "アーム型ロボットに関するアイテムを右クリックすることで消去します。"
 
+#: ../../tutorial.rst:16
+msgid ""
+"Here, please **do not** select \"OpenHRP Model File\" menu item, but select "
+"\"OpenHRP Model File **for Editing**\"."
+msgstr ""
+"ここではメニューから「OpenHRPモデルファイル」ではなく「OpenHRP Model File "
+"**for Editing**」を選択するように注意してください。"
+
 #: ../../tutorial.rst:40
 msgid ""
 "Select the root model item and select \"File\" -> \"Save Selected Items As\" "
@@ -89,10 +97,7 @@ msgstr ""
 "モデルアイテムをクリックしてメニューから「File > Save Selected Item As」を選"
 "択してVRML形式でモデルをセーブしましょう。"
 
-#: ../../tutorial.rst:16
+#: ../../tutorial.rst:42
 msgid ""
-"Here, please **do not** select \"OpenHRP Model File\" menu item, but select "
-"\"OpenHRP Model File **for Editing**\"."
-msgstr ""
-"ここではメニューから「OpenHRPモデルファイル」ではなく「OpenHRP Model File "
-"**for Editing**」を選択するように注意してください。"
+"You can also select URDF to SDF format to save your model within the dialog."
+msgstr "保存ダイアログではフォーマットとしてURDFとSDFも選ぶことができます。"

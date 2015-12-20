@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: hrpsys tutorials 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 15:47+0900\n"
-"PO-Revision-Date: 2015-09-10 10:03+0900\n"
+"PO-Revision-Date: 2015-12-20 11:50+0900\n"
 "Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Install"
 msgstr "インストール"
 
-#: ../../install.rst:38
+#: ../../install.rst:52
 msgid "Clone most recent source from github."
 msgstr "githubから最新のソースコードをクローンします。"
 
@@ -27,19 +27,15 @@ msgstr ""
 "Choreonoid Editorプラグインをインストールするには、まずChoreonoid本体をインス"
 "トールする必要があります。"
 
-#: ../../install.rst:8
-msgid "Install Choreonoid from ppa (recommended)"
-msgstr "Choreonoidをppaからインストールする（推奨）"
-
-#: ../../install.rst:10
+#: ../../install.rst:10 ../../install.rst:24
 msgid "We recommend installing Choreonoid from ppa."
 msgstr "Choreonoidはppaからインストールすることをおすすめします。"
 
-#: ../../install.rst:19
+#: ../../install.rst:33
 msgid "Install Choreonoid from source"
 msgstr "Choreonoidをソースからインストールする"
 
-#: ../../install.rst:23
+#: ../../install.rst:37
 msgid ""
 "Source based installation is hard way. ppa based installation is highly "
 "recommended."
@@ -47,41 +43,56 @@ msgstr ""
 "ソースコードからのインストールは上級者向けの方法です。ppaからのインストールを"
 "強く推奨します。"
 
-#: ../../install.rst:26
+#: ../../install.rst:40
 msgid ""
 "If you want to install Choreonoid from source, please follow following "
 "instructions:"
 msgstr ""
 "Choreonoidをソースからインストールしたい場合、以下の手順に従ってください:"
 
-#: ../../install.rst:36
+#: ../../install.rst:50
 msgid "Install Choreonoid Editor Plugin"
 msgstr "Choreonoid Editorプラグインのインストール"
 
-#: ../../install.rst:44
+#: ../../install.rst:58
 msgid "Then, run cmake."
 msgstr "次にcmakeを実行します。"
 
-#: ../../install.rst:51
+#: ../../install.rst:65
 msgid "Then, run following commands to compile, install and run."
 msgstr ""
 "コンパイル、インストール、実行するために以下のコマンドを実行してください。"
 
-#: ../../install.rst:29
+#: ../../install.rst:43
 msgid "Instructions in Japanese:"
 msgstr "日本語での説明:"
 
-#: ../../install.rst:29
+#: ../../install.rst:43
 msgid "http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html"
 msgstr "http://choreonoid.org/ja/manuals/1.5/install/build-ubuntu.html"
 
-#: ../../install.rst:33
+#: ../../install.rst:47
 msgid "Instructions in English:"
 msgstr "英語での説明:"
 
-#: ../../install.rst:32
+#: ../../install.rst:46
 msgid "https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL"
 msgstr "https://github.com/s-nakaoka/choreonoid/blob/master/INSTALL"
+
+#: ../../install.rst:8
+msgid "Install Choreonoid editor from ppa (recommended)"
+msgstr "Choreonoidエディタをppaからインストールする（推奨）"
+
+#: ../../install.rst:19
+msgid "Install Choreonoid editor from source"
+msgstr "Choreonoidエディタをソースからインストールする"
+
+#: ../../install.rst:22
+msgid "Install Choreonoid from ppa"
+msgstr "Choreonoidをppaからインストールする"
+
+#~ msgid "Install Choreonoid from ppa (recommended)"
+#~ msgstr "Choreonoidをppaからインストールする（推奨）"
 
 #~ msgid "Install from source"
 #~ msgstr "ソースコードからのインストール"
