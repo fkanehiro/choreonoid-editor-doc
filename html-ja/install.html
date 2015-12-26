@@ -83,9 +83,13 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">インストール</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-from-ppa-recommended">Choreonoidをppaからインストールする（推奨）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-from-source">Choreonoidをソースからインストールする</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-plugin">Choreonoid Editorプラグインのインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-from-ppa-recommended">Choreonoidエディタをppaからインストールする（推奨）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-from-source">Choreonoidエディタをソースからインストールする</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-choreonoid-from-ppa">Choreonoidをppaからインストールする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-choreonoid-from-source">Choreonoidをソースからインストールする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-choreonoid-editor-plugin">Choreonoid Editorプラグインのインストール</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoidモデル編集機能</a></li>
@@ -137,8 +141,19 @@
   <div class="section" id="install">
 <h1>インストール<a class="headerlink" href="#install" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>Choreonoid Editorプラグインをインストールするには、まずChoreonoid本体をインストールする必要があります。</p>
-<div class="section" id="install-choreonoid-from-ppa-recommended">
-<h2>Choreonoidをppaからインストールする（推奨）<a class="headerlink" href="#install-choreonoid-from-ppa-recommended" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="install-choreonoid-editor-from-ppa-recommended">
+<h2>Choreonoidエディタをppaからインストールする（推奨）<a class="headerlink" href="#install-choreonoid-editor-from-ppa-recommended" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Choreonoidはppaからインストールすることをおすすめします。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:hrg/daily
+<span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install choreonoid-editor
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-choreonoid-editor-from-source">
+<h2>Choreonoidエディタをソースからインストールする<a class="headerlink" href="#install-choreonoid-editor-from-source" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="install-choreonoid-from-ppa">
+<h3>Choreonoidをppaからインストールする<a class="headerlink" href="#install-choreonoid-from-ppa" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Choreonoidはppaからインストールすることをおすすめします。</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:hrg/daily
 <span class="nv">$ </span>sudo apt-get update
@@ -147,7 +162,7 @@
 </div>
 </div>
 <div class="section" id="install-choreonoid-from-source">
-<h2>Choreonoidをソースからインストールする<a class="headerlink" href="#install-choreonoid-from-source" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>Choreonoidをソースからインストールする<a class="headerlink" href="#install-choreonoid-from-source" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
 <p class="last">ソースコードからのインストールは上級者向けの方法です。ppaからのインストールを強く推奨します。</p>
@@ -161,7 +176,7 @@
 </dl>
 </div>
 <div class="section" id="install-choreonoid-editor-plugin">
-<h2>Choreonoid Editorプラグインのインストール<a class="headerlink" href="#install-choreonoid-editor-plugin" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>Choreonoid Editorプラグインのインストール<a class="headerlink" href="#install-choreonoid-editor-plugin" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>githubから最新のソースコードをクローンします。</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/fkanehiro/choreonoid-editor.git
 </pre></div>
@@ -176,6 +191,7 @@
 <span class="nv">$ </span>sudo make install
 <span class="nv">$ </span>choreonoid
 </pre></div>
+</div>
 </div>
 </div>
 </div>

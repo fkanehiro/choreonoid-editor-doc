@@ -83,9 +83,13 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Install</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-from-ppa-recommended">Install Choreonoid from ppa (recommended)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-from-source">Install Choreonoid from source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-plugin">Install Choreonoid Editor Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-from-ppa-recommended">Install Choreonoid editor from ppa (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-choreonoid-editor-from-source">Install Choreonoid editor from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-choreonoid-from-ppa">Install Choreonoid from ppa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-choreonoid-from-source">Install Choreonoid from source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-choreonoid-editor-plugin">Install Choreonoid Editor Plugin</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoid Model Editor</a></li>
@@ -137,8 +141,19 @@
   <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <p>To install Choreonoid editor plugin, you first have to install Choreonoid.</p>
-<div class="section" id="install-choreonoid-from-ppa-recommended">
-<h2>Install Choreonoid from ppa (recommended)<a class="headerlink" href="#install-choreonoid-from-ppa-recommended" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-choreonoid-editor-from-ppa-recommended">
+<h2>Install Choreonoid editor from ppa (recommended)<a class="headerlink" href="#install-choreonoid-editor-from-ppa-recommended" title="Permalink to this headline">¶</a></h2>
+<p>We recommend installing Choreonoid from ppa.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:hrg/daily
+<span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install choreonoid-editor
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-choreonoid-editor-from-source">
+<h2>Install Choreonoid editor from source<a class="headerlink" href="#install-choreonoid-editor-from-source" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-choreonoid-from-ppa">
+<h3>Install Choreonoid from ppa<a class="headerlink" href="#install-choreonoid-from-ppa" title="Permalink to this headline">¶</a></h3>
 <p>We recommend installing Choreonoid from ppa.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo add-apt-repository ppa:hrg/daily
 <span class="nv">$ </span>sudo apt-get update
@@ -147,7 +162,7 @@
 </div>
 </div>
 <div class="section" id="install-choreonoid-from-source">
-<h2>Install Choreonoid from source<a class="headerlink" href="#install-choreonoid-from-source" title="Permalink to this headline">¶</a></h2>
+<h3>Install Choreonoid from source<a class="headerlink" href="#install-choreonoid-from-source" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Source based installation is hard way.
@@ -162,7 +177,7 @@ ppa based installation is highly recommended.</p>
 </dl>
 </div>
 <div class="section" id="install-choreonoid-editor-plugin">
-<h2>Install Choreonoid Editor Plugin<a class="headerlink" href="#install-choreonoid-editor-plugin" title="Permalink to this headline">¶</a></h2>
+<h3>Install Choreonoid Editor Plugin<a class="headerlink" href="#install-choreonoid-editor-plugin" title="Permalink to this headline">¶</a></h3>
 <p>Clone most recent source from github.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/fkanehiro/choreonoid-editor.git
 </pre></div>
@@ -177,6 +192,7 @@ ppa based installation is highly recommended.</p>
 <span class="nv">$ </span>sudo make install
 <span class="nv">$ </span>choreonoid
 </pre></div>
+</div>
 </div>
 </div>
 </div>
