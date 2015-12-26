@@ -38,3 +38,5 @@ Now, we delete the body of arm robot model by right clicking the item.
 .. image:: delete-body.png
 
 Select the root model item and select "File" -> "Save Selected Items As" menu item to save the model in VRML format.
+
+You can also select URDF to SDF format to save your model within the dialog.
