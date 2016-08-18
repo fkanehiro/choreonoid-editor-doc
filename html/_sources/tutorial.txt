@@ -28,6 +28,10 @@ First, create EditableBodyItem (File->New->EditableBodyItem)
 Repeat procedure above until all necessary items are created.
 Then (or while creating items), set properties of items using the prepared data. 
 
+.. warning::
+
+   You need to check items in ItemView to visualize items.
+
 Save
 ----
 Save the created model by File->Save Selected item as.
