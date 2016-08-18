@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: hrpsys tutorials 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 15:47+0900\n"
-"PO-Revision-Date: 2015-12-20 11:51+0900\n"
+"PO-Revision-Date: 2016-08-18 12:00+0900\n"
 "Last-Translator: Yosuke Matsusaka <yosuke.matsusaka@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,11 @@ msgstr ""
 msgid "Choreonoid Editor Tutorial"
 msgstr "Choreonoidモデル編集機能チュートリアル"
 
-#: ../../tutorial.rst:6
+#: ../../tutorial.rst:37
 msgid "Combining two robot to one"
 msgstr "2つのロボットを接続する"
 
-#: ../../tutorial.rst:8
+#: ../../tutorial.rst:39
 msgid ""
 "In this example, we combine arm (PA10) robot and wheel robot to create "
 "mobile arm robot."
@@ -28,11 +28,11 @@ msgstr ""
 "この例では、アーム型のロボット(PA10)と車輪型のロボットを接続して、移動型の"
 "アームロボットを作成します。"
 
-#: ../../tutorial.rst:10
+#: ../../tutorial.rst:41
 msgid "First, we load the arm robot."
 msgstr "まず、アーム型のロボットを読み込みます。"
 
-#: ../../tutorial.rst:12 ../../tutorial.rst:26
+#: ../../tutorial.rst:43 ../../tutorial.rst:57
 msgid ""
 "Select \"File\" -> \"Open ...\" -> \"OpenHRP Model File for Editing\" menu "
 "item."
@@ -40,7 +40,7 @@ msgstr ""
 "メニューから「File > Open ... > OpenHRP Model File for Editing」を選択してく"
 "ださい。"
 
-#: ../../tutorial.rst:18
+#: ../../tutorial.rst:49
 msgid ""
 "Dialog box will be appeared and choose \"pa10.main.wrl\" file from the "
 "OpenHRP sample models folder."
@@ -48,7 +48,7 @@ msgstr ""
 "ダイアログが開くのでOpenHRPのサンプルフォルダから「pa10.main.wrl」ファイルを"
 "選択してください。"
 
-#: ../../tutorial.rst:20
+#: ../../tutorial.rst:51
 msgid ""
 "Arm robot model is now loaded. Please turn on all the checkbox at side of "
 "the items to let the robot appear in the scene panel."
@@ -56,11 +56,11 @@ msgstr ""
 "アームロボットがロードできました。各アイテムの横のチェックボックスをオンにす"
 "ることで、ロボットの外観がシーンパネル上で確認できます。"
 
-#: ../../tutorial.rst:24
+#: ../../tutorial.rst:55
 msgid "We also load the wheel robot."
 msgstr "車輪型のロボットも読み込みます。"
 
-#: ../../tutorial.rst:28
+#: ../../tutorial.rst:59
 msgid ""
 "Dialog box will be appeared and choose \"simple_vehicle.wrl\" file from the "
 "OpenHRP sample models folder."
@@ -68,7 +68,7 @@ msgstr ""
 "ダイアログが開くのでOpenHRPのサンプルフォルダから「simple_vehicle.wrl」ファイ"
 "ルを選択してください。"
 
-#: ../../tutorial.rst:32
+#: ../../tutorial.rst:63
 msgid ""
 "To connect the arm robot to wheel base, click the \"J1\" item of PA10 robot "
 "model and drag the item over the \"BODY\" item of simple_vehicle model."
@@ -77,11 +77,11 @@ msgstr ""
 "クしてドラッグし、simple_vehicleモデルの「BODY」アイテムの上でドロップしてく"
 "ださい。"
 
-#: ../../tutorial.rst:36
+#: ../../tutorial.rst:67
 msgid "Now, we delete the body of arm robot model by right clicking the item."
 msgstr "アーム型ロボットに関するアイテムを右クリックすることで消去します。"
 
-#: ../../tutorial.rst:16
+#: ../../tutorial.rst:47
 msgid ""
 "Here, please **do not** select \"OpenHRP Model File\" menu item, but select "
 "\"OpenHRP Model File **for Editing**\"."
@@ -89,7 +89,7 @@ msgstr ""
 "ここではメニューから「OpenHRPモデルファイル」ではなく「OpenHRP Model File "
 "**for Editing**」を選択するように注意してください。"
 
-#: ../../tutorial.rst:40
+#: ../../tutorial.rst:71
 msgid ""
 "Select the root model item and select \"File\" -> \"Save Selected Items As\" "
 "menu item to save the model in VRML format."
@@ -97,7 +97,92 @@ msgstr ""
 "モデルアイテムをクリックしてメニューから「File > Save Selected Item As」を選"
 "択してVRML形式でモデルをセーブしましょう。"
 
-#: ../../tutorial.rst:42
+#: ../../tutorial.rst:73
 msgid ""
 "You can also select URDF to SDF format to save your model within the dialog."
 msgstr "保存ダイアログではフォーマットとしてURDFとSDFも選ぶことができます。"
+
+#: ../../tutorial.rst:6
+msgid "Creating a robot from scratch"
+msgstr "新規にモデルを作成する"
+
+#: ../../tutorial.rst:9
+msgid "Preparation"
+msgstr "準備"
+
+#: ../../tutorial.rst:11
+msgid "Please prepare the following data."
+msgstr "以下のデータを準備してください。"
+
+#: ../../tutorial.rst:13
+msgid "VRML97 files that defines shapes of each link"
+msgstr "各リンクの形状を定義するVRML97ファイル。"
+
+#: ../../tutorial.rst:14
+msgid "mass properties(mass, center of mass, moments of inertia) of each link"
+msgstr "各リンクの質量特性（質量、重心位置、重心周りの慣性モーメント）"
+
+#: ../../tutorial.rst:15
+msgid "kinematic properties(relative positions/orientations between joints)"
+msgstr "機構パラメータ（関節の相対位置・回転関係）"
+
+#: ../../tutorial.rst:16
+msgid "joint properties(movable ranges, joint velocity limits and so on)"
+msgstr "関節の属性値（可動範囲、速度上限値など）"
+
+#: ../../tutorial.rst:19
+msgid "Creation"
+msgstr "作成"
+
+#: ../../tutorial.rst:21
+msgid "First, create EditableBodyItem (File->New->EditableBodyItem)"
+msgstr ""
+"まず最初に、EditableBodyItemを「ファイル > 新規 > EditableBodyItem」から作成"
+"します。"
+
+#: ../../tutorial.rst:28
+msgid ""
+"Repeat procedure above until all necessary items are created. Then (or while "
+"creating items), set properties of items using the prepared data."
+msgstr ""
+"上記の手順を必要なすべてのアイテムが生成されるまで繰り返します。その後で（ま"
+"たはアイテム作成のたびに）、各アイテムのプロパティを用意したデータを用いて設"
+"定します。"
+
+#: ../../tutorial.rst:32
+msgid "Save"
+msgstr "保存"
+
+#: ../../tutorial.rst:33
+msgid "Save the created model by File->Save Selected item as."
+msgstr ""
+"作成したモデルを「ファイル > 名前を付けて選択アイテムを保存」を使って保存しま"
+"す。"
+
+#: ../../tutorial.rst:23
+msgid ""
+"create JointItem (File->New->JointItem) as a child of EditableBodyItem (for "
+"the first joint) or JointItem (for other joints)"
+msgstr ""
+"JointItemを「ファイル > 新規 > JointItem」から生成します。最初のJointItemは"
+"EditableBodyItemの子供として、その他のJointItemは他のJointItemの子どもとして"
+"作成します。"
+
+#: ../../tutorial.rst:24
+msgid "create LinkItem (File->New->LinkItem) as a child of JointItem"
+msgstr ""
+"LinkItemを「ファイル > 新規 > LinkItem」からJointItemの子供として作成します。"
+
+#: ../../tutorial.rst:25
+msgid ""
+"create PrimitiveShapeItem (File->New->PrimitiveShapeItem) and/or "
+"MeshShapeItem (File->New->MeshShapeItem) as a child of LinkItem"
+msgstr ""
+"PrimitiveShapeItemまたはMeshShapeItemをLinkItemの子供として作成し、形状を設定"
+"します。"
+
+#: ../../tutorial.rst:26
+msgid "create SensorItem (File->New->SensorItem) as a child of JointItem"
+msgstr ""
+"SensorItemを「ファイル > 新規 > SensorItem」からJointItemの子供として作成しま"
+"す。"

@@ -2,6 +2,37 @@
  Choreonoid Editor Tutorial
 ============================
 
+Creating a robot from scratch
+=============================
+
+Preparation
+-----------
+
+Please prepare the following data.
+
+* VRML97 files that defines shapes of each link
+* mass properties(mass, center of mass, moments of inertia) of each link
+* kinematic properties(relative positions/orientations between joints)
+* joint properties(movable ranges, joint velocity limits and so on)
+
+Creation
+--------
+
+First, create EditableBodyItem (File->New->EditableBodyItem)
+
+* create JointItem (File->New->JointItem) as a child of EditableBodyItem (for the first joint) or JointItem (for other joints)
+* create LinkItem (File->New->LinkItem) as a child of JointItem
+* create PrimitiveShapeItem (File->New->PrimitiveShapeItem) and/or MeshShapeItem (File->New->MeshShapeItem) as a child of LinkItem
+* create SensorItem (File->New->SensorItem) as a child of JointItem
+
+Repeat procedure above until all necessary items are created.
+Then (or while creating items), set properties of items using the prepared data. 
+
+Save
+----
+Save the created model by File->Save Selected item as.
+
+
 Combining two robot to one
 ==========================
 
