@@ -83,21 +83,48 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">インストール</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoidモデル編集機能</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Choreonoidモデル編集機能</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#architecture">アーキテクチャ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#editablebodyitem">EditableBodyItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jointitem">JointItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#translation">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotation">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joint-id">Joint ID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#joint-type">Joint type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#joint-axis">Joint axis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#upper-limit">Upper limit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lower-limit">Lower limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upper-velocity-limit">Upper velocity limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lower-velocity-limit">Lower velocity limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gear-ratio">Gear ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotor-inertia">Rotor inertia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#torque-const">Torque const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encoder-pulse">Encoder pulse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#linkitem">LinkItem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#primitive-type">Primitive type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mass">Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#center-of-mass">Center of mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inertia">Inertia</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sensoritem">SensorItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-id">Sensor ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-type">Sensor type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#primitiveshapeitem">PrimitiveShapeItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#primitive-type">Primitive type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#meshshapeitem">MeshShapeItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#path">path</a></li>
 </ul>
 </li>
 </ul>
@@ -125,7 +152,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -164,8 +191,20 @@
 </div>
 <div class="section" id="jointitem">
 <h2>JointItem<a class="headerlink" href="#jointitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>シミュレーションモデルに関節を付与したい場合、このアイテムを作成する必要があります。</p>
+<p>シミュレーションモデルに関節を加える際にこのアイテムを作成します。最初の関節はEditableBodyItemの子供として作成し、それ以外の関節は他の関節の子供として作成します。</p>
 <p>プロパティパネルの各項目をダブルクリックすることで、関節の各プロパティを編集することができます。</p>
+<div class="section" id="translation">
+<h3>translation<a class="headerlink" href="#translation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親関節に対する相対位置を指定します。</p>
+</div>
+<div class="section" id="rotation">
+<h3>rotation<a class="headerlink" href="#rotation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親関節に対する相対回転を指定します。</p>
+</div>
+<div class="section" id="joint-id">
+<h3>Joint ID<a class="headerlink" href="#joint-id" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>一意なＩＤを指定します。</p>
+</div>
 <div class="section" id="joint-type">
 <h3>Joint type<a class="headerlink" href="#joint-type" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>関節の種類を「free」「rotate」「slide」「fixed」から選択します。</p>
@@ -182,16 +221,35 @@
 <h3>Lower limit<a class="headerlink" href="#lower-limit" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>関節角の下限を設定します。</p>
 </div>
+<div class="section" id="upper-velocity-limit">
+<h3>Upper velocity limit<a class="headerlink" href="#upper-velocity-limit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関節速度の上限値を指定します。</p>
+</div>
+<div class="section" id="lower-velocity-limit">
+<h3>Lower velocity limit<a class="headerlink" href="#lower-velocity-limit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>関節速度の下限値を指定します。</p>
+</div>
+<div class="section" id="gear-ratio">
+<h3>Gear ratio<a class="headerlink" href="#gear-ratio" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>この関節の減速比を指定します。</p>
+</div>
+<div class="section" id="rotor-inertia">
+<h3>Rotor inertia<a class="headerlink" href="#rotor-inertia" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>この関節を駆動するモータのローター慣性を指定します。</p>
+</div>
+<div class="section" id="torque-const">
+<h3>Torque const<a class="headerlink" href="#torque-const" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>この関節を駆動するモータのトルク定数を指定します。</p>
+</div>
+<div class="section" id="encoder-pulse">
+<h3>Encoder pulse<a class="headerlink" href="#encoder-pulse" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>この関節を駆動するモータのエンコーダが１回転で何パルス出力するかを指定します。</p>
+</div>
 </div>
 <div class="section" id="linkitem">
 <h2>LinkItem<a class="headerlink" href="#linkitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>シミュレーションモデルに関節を付与したい場合、このアイテムを作成する必要があります。</p>
-<p>プロパティパネルの各項目をダブルクリックすることで、関節の各プロパティを編集することができます。</p>
-<div class="section" id="primitive-type">
-<h3>Primitive type<a class="headerlink" href="#primitive-type" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>リンクの種類を「Box」「Cylinder」「Cone」「Sphere」から選択します。</p>
-<p>プリミティブ型が選択されると、色や直径などの各プリミティブ型用のプロパティが表示されます。</p>
-</div>
+<p>シミュレーションモデルにリンクを追加するには、このアイテムを関節の子供として作成します。</p>
+<p>アイテムを作成した後、プロパティパネルをダブルクリックしてプロパティを編集します。</p>
 <div class="section" id="mass">
 <h3>Mass<a class="headerlink" href="#mass" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>リンクの重量を設定します。</p>
@@ -203,6 +261,63 @@
 <div class="section" id="inertia">
 <h3>Inertia<a class="headerlink" href="#inertia" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>リンクの慣性モーメントを3x3の行列形式で設定します。</p>
+</div>
+</div>
+<div class="section" id="sensoritem">
+<h2>SensorItem<a class="headerlink" href="#sensoritem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>シミュレーションモデルにセンサを追加するには、このアイテムを関節の子供として作成します。</p>
+<p>アイテムを作成後、プロパティパネルをダブルクリックしてプロパティを編集します。</p>
+<div class="section" id="id1">
+<h3>translation<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親関節に対する相対位置を指定します。</p>
+</div>
+<div class="section" id="id2">
+<h3>rotation<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親関節に対する相対回転を指定します。</p>
+</div>
+<div class="section" id="sensor-id">
+<h3>Sensor ID<a class="headerlink" href="#sensor-id" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>センサーのタイプ毎に一意なＩＤを指定します。</p>
+</div>
+<div class="section" id="sensor-type">
+<h3>Sensor type<a class="headerlink" href="#sensor-type" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>センサータイプを &#8220;camera&#8221;, &#8220;range&#8221;, &#8220;gyro&#8221;, &#8220;force&#8221;, &#8220;acceleration&#8221;から選択できます。</p>
+<p>センサータイプを指定すると、センサータイプに応じたパラメータが編集可能になります。</p>
+</div>
+</div>
+<div class="section" id="primitiveshapeitem">
+<h2>PrimitiveShapeItem<a class="headerlink" href="#primitiveshapeitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>シミュレーションモデルに形状データを設定する場合にこのアイテムをリンクの子供として作成します。</p>
+<p>アイテムを作成後、プロパティパネルをダブルクリックしてプロパティを編集します。</p>
+<div class="section" id="id3">
+<h3>translation<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親に対する相対位置を指定します。</p>
+</div>
+<div class="section" id="id4">
+<h3>rotation<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親に対する相対回転を指定します。</p>
+</div>
+<div class="section" id="primitive-type">
+<h3>Primitive type<a class="headerlink" href="#primitive-type" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンクの種類を「Box」「Cylinder」「Cone」「Sphere」から選択します。</p>
+<p>プリミティブのタイプを指定すると、それぞれのプリミティブのタイプに応じたパラメータが編集できるようになります。</p>
+</div>
+</div>
+<div class="section" id="meshshapeitem">
+<h2>MeshShapeItem<a class="headerlink" href="#meshshapeitem" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>シミュレーションモデルに形状データを設定する場合にこのアイテムをリンクの子供として作成します。</p>
+<p>アイテムを作成後、プロパティパネルをダブルクリックしてプロパティを編集します。</p>
+<div class="section" id="id5">
+<h3>translation<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親に対する相対位置を指定します。</p>
+</div>
+<div class="section" id="id6">
+<h3>rotation<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親に対する相対回転を指定します。</p>
+</div>
+<div class="section" id="path">
+<h3>path<a class="headerlink" href="#path" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>形状を定義しているVRML97ファイルのパスを指定します。</p>
 </div>
 </div>
 </div>

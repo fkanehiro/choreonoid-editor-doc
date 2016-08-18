@@ -83,7 +83,13 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">インストール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoidモデル編集機能</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoidモデル編集機能チュートリアル</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Choreonoidモデル編集機能チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-robot-from-scratch">新規にモデルを作成する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation">準備</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creation">作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save">保存</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#combining-two-robot-to-one">2つのロボットを接続する</a></li>
 </ul>
 </li>
@@ -109,7 +115,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -133,6 +139,42 @@
             
   <div class="section" id="choreonoid-editor-tutorial">
 <h1>Choreonoidモデル編集機能チュートリアル<a class="headerlink" href="#choreonoid-editor-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="creating-a-robot-from-scratch">
+<h2>新規にモデルを作成する<a class="headerlink" href="#creating-a-robot-from-scratch" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="preparation">
+<h3>準備<a class="headerlink" href="#preparation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下のデータを準備してください。</p>
+<ul class="simple">
+<li><p class="first">各リンクの形状を定義するVRML97ファイル。</p>
+</li>
+<li><p class="first">各リンクの質量特性（質量、重心位置、重心周りの慣性モーメント）</p>
+</li>
+<li><p class="first">機構パラメータ（関節の相対位置・回転関係）</p>
+</li>
+<li><p class="first">関節の属性値（可動範囲、速度上限値など）</p>
+</li>
+</ul>
+</div>
+<div class="section" id="creation">
+<h3>作成<a class="headerlink" href="#creation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>まず最初に、EditableBodyItemを「ファイル &gt; 新規 &gt; EditableBodyItem」から作成します。</p>
+<ul class="simple">
+<li><p class="first">JointItemを「ファイル &gt; 新規 &gt; JointItem」から生成します。最初のJointItemはEditableBodyItemの子供として、その他のJointItemは他のJointItemの子どもとして作成します。</p>
+</li>
+<li><p class="first">LinkItemを「ファイル &gt; 新規 &gt; LinkItem」からJointItemの子供として作成します。</p>
+</li>
+<li><p class="first">PrimitiveShapeItemまたはMeshShapeItemをLinkItemの子供として作成し、形状を設定します。</p>
+</li>
+<li><p class="first">SensorItemを「ファイル &gt; 新規 &gt; SensorItem」からJointItemの子供として作成します。</p>
+</li>
+</ul>
+<p>上記の手順を必要なすべてのアイテムが生成されるまで繰り返します。その後で（またはアイテム作成のたびに）、各アイテムのプロパティを用意したデータを用いて設定します。</p>
+</div>
+<div class="section" id="save">
+<h3>保存<a class="headerlink" href="#save" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>作成したモデルを「ファイル &gt; 名前を付けて選択アイテムを保存」を使って保存します。</p>
+</div>
+</div>
 <div class="section" id="combining-two-robot-to-one">
 <h2>2つのロボットを接続する<a class="headerlink" href="#combining-two-robot-to-one" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>この例では、アーム型のロボット(PA10)と車輪型のロボットを接続して、移動型のアームロボットを作成します。</p>

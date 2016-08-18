@@ -83,21 +83,48 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoid Model Editor</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Choreonoid Model Editor</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#editablebodyitem">EditableBodyItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jointitem">JointItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#translation">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotation">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joint-id">Joint ID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#joint-type">Joint type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#joint-axis">Joint axis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#upper-limit">Upper limit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lower-limit">Lower limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upper-velocity-limit">Upper velocity limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lower-velocity-limit">Lower velocity limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gear-ratio">Gear ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotor-inertia">Rotor inertia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#torque-const">Torque const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encoder-pulse">Encoder pulse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#linkitem">LinkItem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#primitive-type">Primitive type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mass">Mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#center-of-mass">Center of mass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inertia">Inertia</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sensoritem">SensorItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-id">Sensor ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-type">Sensor type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#primitiveshapeitem">PrimitiveShapeItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#primitive-type">Primitive type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#meshshapeitem">MeshShapeItem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#path">path</a></li>
 </ul>
 </li>
 </ul>
@@ -125,7 +152,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -164,8 +191,20 @@
 </div>
 <div class="section" id="jointitem">
 <h2>JointItem<a class="headerlink" href="#jointitem" title="Permalink to this headline">¶</a></h2>
-<p>When you want to add a joint to your simulation model, you have to create this item.</p>
+<p>When you want to add a joint to your simulation model, you have to create this item as a child of EditableBodyItem or other joints.</p>
 <p>After created, you can edit the property of the joint by double clicking the property panel.</p>
+<div class="section" id="translation">
+<h3>translation<a class="headerlink" href="#translation" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative position with respect to the parent joint.</p>
+</div>
+<div class="section" id="rotation">
+<h3>rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative rotation with respect to the parent joint.</p>
+</div>
+<div class="section" id="joint-id">
+<h3>Joint ID<a class="headerlink" href="#joint-id" title="Permalink to this headline">¶</a></h3>
+<p>Specifies unique ID</p>
+</div>
 <div class="section" id="joint-type">
 <h3>Joint type<a class="headerlink" href="#joint-type" title="Permalink to this headline">¶</a></h3>
 <p>Specifies type of joint from &#8220;free&#8221;, &#8220;rotate&#8221;, &#8220;slide&#8221;, &#8220;fixed&#8221;.</p>
@@ -182,16 +221,35 @@
 <h3>Lower limit<a class="headerlink" href="#lower-limit" title="Permalink to this headline">¶</a></h3>
 <p>Specifies lower limit of joint angle.</p>
 </div>
+<div class="section" id="upper-velocity-limit">
+<h3>Upper velocity limit<a class="headerlink" href="#upper-velocity-limit" title="Permalink to this headline">¶</a></h3>
+<p>Specifies upper limit of joint velocity.</p>
+</div>
+<div class="section" id="lower-velocity-limit">
+<h3>Lower velocity limit<a class="headerlink" href="#lower-velocity-limit" title="Permalink to this headline">¶</a></h3>
+<p>Specifies lower limit of joint velocity.</p>
+</div>
+<div class="section" id="gear-ratio">
+<h3>Gear ratio<a class="headerlink" href="#gear-ratio" title="Permalink to this headline">¶</a></h3>
+<p>Specifies gear ratio of this joint.</p>
+</div>
+<div class="section" id="rotor-inertia">
+<h3>Rotor inertia<a class="headerlink" href="#rotor-inertia" title="Permalink to this headline">¶</a></h3>
+<p>Specifies inertia of rotor of the motor which drives this joint.</p>
+</div>
+<div class="section" id="torque-const">
+<h3>Torque const<a class="headerlink" href="#torque-const" title="Permalink to this headline">¶</a></h3>
+<p>Specifies torque constant of the motor which drives this joint.</p>
+</div>
+<div class="section" id="encoder-pulse">
+<h3>Encoder pulse<a class="headerlink" href="#encoder-pulse" title="Permalink to this headline">¶</a></h3>
+<p>Specifies the number of encoder pulse per round.</p>
+</div>
 </div>
 <div class="section" id="linkitem">
 <h2>LinkItem<a class="headerlink" href="#linkitem" title="Permalink to this headline">¶</a></h2>
-<p>When you want to add a joint to your simulation model, you have to create this item.</p>
-<p>After created, you can edit the property of the joint by double clicking the property panel.</p>
-<div class="section" id="primitive-type">
-<h3>Primitive type<a class="headerlink" href="#primitive-type" title="Permalink to this headline">¶</a></h3>
-<p>Specifies type of link from &#8220;Box&#8221;, &#8220;Cylinder&#8221;, &#8220;Cone&#8221;, &#8220;Sphere&#8221;.</p>
-<p>Once primitive type is selected, property for each primitive types (e.g. color and radius for sphere) will be appeared.</p>
-</div>
+<p>When you want to add a link to your simulation model, you have to create this item as a child of JointItem.</p>
+<p>After created, you can edit the property of the link by double clicking the property panel.</p>
 <div class="section" id="mass">
 <h3>Mass<a class="headerlink" href="#mass" title="Permalink to this headline">¶</a></h3>
 <p>Specifies mass.</p>
@@ -203,6 +261,63 @@
 <div class="section" id="inertia">
 <h3>Inertia<a class="headerlink" href="#inertia" title="Permalink to this headline">¶</a></h3>
 <p>Specifies moment of inertia in 3x3 matrix format.</p>
+</div>
+</div>
+<div class="section" id="sensoritem">
+<h2>SensorItem<a class="headerlink" href="#sensoritem" title="Permalink to this headline">¶</a></h2>
+<p>When you want to add a sensor to your simulation model, you have to create this item as a child of JointItem.</p>
+<p>After created, you can edit the property of the sensor by double clicking the property panel.</p>
+<div class="section" id="id1">
+<h3>translation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative position with respect to the parent joint.</p>
+</div>
+<div class="section" id="id2">
+<h3>rotation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative rotation with respect to the parent joint.</p>
+</div>
+<div class="section" id="sensor-id">
+<h3>Sensor ID<a class="headerlink" href="#sensor-id" title="Permalink to this headline">¶</a></h3>
+<p>Specifies unique ID of this sensor.</p>
+</div>
+<div class="section" id="sensor-type">
+<h3>Sensor type<a class="headerlink" href="#sensor-type" title="Permalink to this headline">¶</a></h3>
+<p>Specifies type of sensor from &#8220;camera&#8221;, &#8220;range&#8221;, &#8220;gyro&#8221;, &#8220;force&#8221;, &#8220;acceleration&#8221;.</p>
+<p>Once sensor type is selected, properties for each sensor type will appear.</p>
+</div>
+</div>
+<div class="section" id="primitiveshapeitem">
+<h2>PrimitiveShapeItem<a class="headerlink" href="#primitiveshapeitem" title="Permalink to this headline">¶</a></h2>
+<p>When you want to add a shape to your simulation model, you have to create this item as a child of LinkItem.</p>
+<p>After created, you can edit the property of the sensor by double clicking the property panel.</p>
+<div class="section" id="id3">
+<h3>translation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative position with respect to the parent link.</p>
+</div>
+<div class="section" id="id4">
+<h3>rotation<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative rotation with respect to the parent link.</p>
+</div>
+<div class="section" id="primitive-type">
+<h3>Primitive type<a class="headerlink" href="#primitive-type" title="Permalink to this headline">¶</a></h3>
+<p>Specifies type of link from &#8220;Box&#8221;, &#8220;Cylinder&#8221;, &#8220;Cone&#8221;, &#8220;Sphere&#8221;.</p>
+<p>Once primitive type is selected, properties for each primitive type (e.g. color and radius for sphere) will appear.</p>
+</div>
+</div>
+<div class="section" id="meshshapeitem">
+<h2>MeshShapeItem<a class="headerlink" href="#meshshapeitem" title="Permalink to this headline">¶</a></h2>
+<p>When you want to add a shape to your simulation model, you have to create this item as a child of LinkItem.</p>
+<p>After created, you can edit the property of the sensor by double clicking the property panel.</p>
+<div class="section" id="id5">
+<h3>translation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative position with respect to the parent link.</p>
+</div>
+<div class="section" id="id6">
+<h3>rotation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Specifies relative rotation with respect to the parent link.</p>
+</div>
+<div class="section" id="path">
+<h3>path<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h3>
+<p>Specifies path of VRML97 file.</p>
 </div>
 </div>
 </div>

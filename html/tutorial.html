@@ -83,7 +83,13 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Choreonoid Model Editor</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Choreonoid Editor Tutorial</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Choreonoid Editor Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-robot-from-scratch">Creating a robot from scratch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creation">Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save">Save</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#combining-two-robot-to-one">Combining two robot to one</a></li>
 </ul>
 </li>
@@ -109,7 +115,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -133,6 +139,35 @@
             
   <div class="section" id="choreonoid-editor-tutorial">
 <h1>Choreonoid Editor Tutorial<a class="headerlink" href="#choreonoid-editor-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-a-robot-from-scratch">
+<h2>Creating a robot from scratch<a class="headerlink" href="#creating-a-robot-from-scratch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preparation">
+<h3>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h3>
+<p>Please prepare the following data.</p>
+<ul class="simple">
+<li>VRML97 files that defines shapes of each link</li>
+<li>mass properties(mass, center of mass, moments of inertia) of each link</li>
+<li>kinematic properties(relative positions/orientations between joints)</li>
+<li>joint properties(movable ranges, joint velocity limits and so on)</li>
+</ul>
+</div>
+<div class="section" id="creation">
+<h3>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h3>
+<p>First, create EditableBodyItem (File-&gt;New-&gt;EditableBodyItem)</p>
+<ul class="simple">
+<li>create JointItem (File-&gt;New-&gt;JointItem) as a child of EditableBodyItem (for the first joint) or JointItem (for other joints)</li>
+<li>create LinkItem (File-&gt;New-&gt;LinkItem) as a child of JointItem</li>
+<li>create PrimitiveShapeItem (File-&gt;New-&gt;PrimitiveShapeItem) and/or MeshShapeItem (File-&gt;New-&gt;MeshShapeItem) as a child of LinkItem</li>
+<li>create SensorItem (File-&gt;New-&gt;SensorItem) as a child of JointItem</li>
+</ul>
+<p>Repeat procedure above until all necessary items are created.
+Then (or while creating items), set properties of items using the prepared data.</p>
+</div>
+<div class="section" id="save">
+<h3>Save<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h3>
+<p>Save the created model by File-&gt;Save Selected item as.</p>
+</div>
+</div>
 <div class="section" id="combining-two-robot-to-one">
 <h2>Combining two robot to one<a class="headerlink" href="#combining-two-robot-to-one" title="Permalink to this headline">¶</a></h2>
 <p>In this example, we combine arm (PA10) robot and wheel robot to create mobile arm robot.</p>
